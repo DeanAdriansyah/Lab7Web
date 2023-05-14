@@ -37,13 +37,12 @@ Berikut beberapa ekstensi yang perlu diaktifkan:
 Untuk mengaktifkan ekstentsi tersebut, melalu XAMPP Control Panel, pada bagian Apache klik Config
 -> PHP.ini
 
-(GAMBAR)
-![menambahkan_gambar](README_img/mobil.png)
+![menambahkan_gambar](README_img/___.png)
 
 Pada bagian extention, hilangkan tanda ; (titik koma) pada ekstensi yang akan diaktifkan. Kemudian
 simpan kembali filenya dan restart Apache web server.
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Instalasi Codeigniter 4
 
@@ -55,21 +54,21 @@ menggunakan composer. Pada praktikum ini kita menggunakan cara manual.
 • Ubah nama direktory framework-4.x.xx menjadi ci4.
 • Buka browser dengan alamat http://localhost/lab11_ci/ci4/public/
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Menjalankan CLI (Command Line Interface)
 
 Codeigniter 4 menyediakan CLI untuk mempermudah proses development. Untuk mengakses CLI buka
 terminal/command prompt.
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Arahkan lokasi direktori sesuai dengan direktori kerja project dibuat (xampp/htdocs/lab11_ci/ci4/)
 Perintah yang dapat dijalankan untuk memanggil CLI Codeigniter adalah:
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Mengaktifkan Mode Debugging
 
@@ -79,23 +78,23 @@ error apabila terjadi kesalahan dalam membuat kode program.
 Secara default fitur ini belum aktif. Ketika terjadi error pada aplikasi akan ditampilkan pesan
 kesalahan seperti berikut.
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Semua jenis error akan ditampilkan sama. Untuk memudahkan mengetahui jenis errornya, maka perlu
 diaktifkan mode debugging dengan mengubah nilai konfigurasi pada environment variable
 CI_ENVIRINMENT menjadi development.
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Ubah nama file env menjadi .env kemudian buka file tersebut dan ubah nilai variable
 CI_ENVIRINMENT menjadi development.
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Contoh error yang terjadi. Untuk mencoba error tersebut, ubah kode pada file
 app/Controller/Home.php hilangkan titik koma pada akhir kode.
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Struktur Direktori
 
@@ -129,7 +128,7 @@ pada repo github atau gitlab.
 - spark adalah program atau script yang berfungsi untuk menjalankan server, generate kode,
 dll.
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Fokus kita pada folder app, dimana folder tersebut adalah area kerja kita untuk membuat aplikasi.
 Dan folder public untuk menyimpan aset web seperti css, gambar, javascript, dll.
@@ -166,12 +165,12 @@ oleh router tesebut diarahkan ke Controller.
 
 Router terletak pada file app/config/Routes.php
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Pada file tersebut kita dapat mendefinisikan route untuk aplikasi yang kita buat.
 Contoh:
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Kode tersebut akan mengarahkan rute untuk halaman home.
 
@@ -179,18 +178,18 @@ Membuat Route Baru.
 
 Tambahkan kode berikut di dalam Routes.php
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Untuk mengetahui route yang ditambahkan sudah benar, buka CLI dan jalankan perintah berikut.
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Selanjutnya coba akses route yang telah dibuat dengan mengakses alamat url
 http://localhost:8080/about
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Ketika diakses akan mucul tampilan error 404 file not found, itu artinya file/page tersebut tidak ada.
 Untuk dapat mengakses halaman tersebut, harus dibuat terlebih dahulu Contoller yang sesuai dengan
@@ -201,43 +200,43 @@ Membuat Controller
 Selanjutnya adalah membuat Controller Page. Buat file baru dengan nama page.php pada direktori
 Controller kemudian isi kodenya seperti berikut.
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Selanjutnya refresh Kembali browser, maka akan ditampilkan hasilnya yaotu halaman sudah dapat
 diakses.
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Auto Routing
 
 Secara default fitur autoroute pada Codeiginiter sudah aktif. Untuk mengubah status autoroute dapat
 mengubah nilai variabelnya. Untuk menonaktifkan ubah nilai true menjadi false.
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Tambahkan method baru pada Controller Page seperti berikut.
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Method ini belum ada pada routing, sehingga cara mengaksesnya dengan menggunakan alamat:
 http://localhost:8080/page/tos
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Membuat View
 
 Selanjutnya adalam membuat view untuk tampilan web agar lebih menarik. Buat file baru dengan
 nama about.php pada direktori view (app/view/about.php) kemudian isi kodenya seperti berikut.
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Ubah method about pada class Controller Page menjadi seperti berikut:
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Kemudian lakukan refresh pada halaman tersebut.
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Membuat Layout Web dengan CSS
 
@@ -248,27 +247,27 @@ direktori public.
 Buat file css pada direktori public dengan nama style.css (copy file dari praktikum lab4_layout. Kita
 akan gunakan layout yang pernah dibuat pada praktikum 4.
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Kemudian buat folder template pada direktori view kemudian buat file header.php dan footer.php
 
 File app/view/template/header.php
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 File app/view/template/footer.php
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Kemudian ubah file app/view/about.php seperti berikut.
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Selanjutnya refresh tampilan pada alamat http://localhost:8080/about
 
-(GAMBAR)
+![menambahkan_gambar](README_img/___.png)
 
 Pertanyaan dan Tugas
 
