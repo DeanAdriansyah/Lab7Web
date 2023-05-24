@@ -56,7 +56,7 @@ simpan kembali filenya dan restart Apache web server.</p>
 <p>Untuk melakukan instalasi Codeigniter 4 dapat dilakukan dengan dua cara, yaitu cara manual dan
 menggunakan composer. Yang pertama kita akan menggunakan cara manual.</p>
 
-1. Buka situs web resmi CodeIgniter 4 di https://codeigniter.com dan klik tombol "Download" di menu atas. Pilih versi terbaru dari CodeIgniter 4 yang tersedia untuk diunduh.<a href="https://codeigniter.com/download"><img alt="Download CodeIgniter" src="https://img.shields.io/badge/1%2C080%20KB-CodeIgniter-orange" /></a>
+1. Buka situs web resmi CodeIgniter 4 di https://codeigniter.com dan klik tombol "Download" di menu atas. Pilih versi terbaru dari CodeIgniter 4 yang tersedia untuk diunduh. <a href="https://codeigniter.com/download"><img alt="Download CodeIgniter" src="https://img.shields.io/badge/1%2C080%20KB-CodeIgniter-orange" /></a>
 
 2. Setelah selesai mengunduh, ekstrak file yang diunduh ke dalam direktori project kita (Example: htdocs/lab7_php_ci).
 
