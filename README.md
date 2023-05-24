@@ -403,7 +403,7 @@ navigasi header dapat menampilkan tampilan dengan layout yang sama.
 
 - Jika ingin mengetahui Code yang digunakan Bisa mengikuti Link Berikut: 
   <a href="https://github.com/DeanAdriansyah/Lab7Web/tree/main/lab7_php_ci/ci4">
-  <img alt="Dean Adriansyah | Github Code" width="26px" src="https://banner2.cleanpng.com/20180331/ejw/kisspng-computer-icons-source-code-html-coding-5abfde9a525da9.8570713615225238023374.jpg" />  
+  <img alt="Dean Adriansyah | Github Code" width="26px" src="https://img.shields.io/badge/%20Link%20Code-ci4-orange" />  
   </a>
 
 - Halaman Artikel
