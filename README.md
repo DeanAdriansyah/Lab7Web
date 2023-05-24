@@ -401,6 +401,11 @@ Pertanyaan dan Tugas
 Lengkapi kode program untuk menu lainnya yang ada pada Controller Page, sehingga semua link pada
 navigasi header dapat menampilkan tampilan dengan layout yang sama.
 
+- Jika ingin mengetahui Code yang digunakan Bisa mengikuti Link Berikut: 
+  <a href="https://github.com/DeanAdriansyah/Lab7Web/tree/main/lab7_php_ci/ci4">
+  <img alt="Dean Adriansyah | Github Code" width="26px" src="https://banner2.cleanpng.com/20180331/ejw/kisspng-computer-icons-source-code-html-coding-5abfde9a525da9.8570713615225238023374.jpg" />  
+  </a>
+
 - Halaman Artikel
 
 ![tugas](README_img/artikel_page.png)
