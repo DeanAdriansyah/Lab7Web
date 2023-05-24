@@ -30,10 +30,15 @@
 <p>Sebelum memulai menggunakan Framework Codeigniter, perlu dilakukan konfigurasi pada webserver.
 Beberapa ekstensi PHP perlu diaktifkan untuk kebutuhan pengembangan Codeigniter 4.
 Berikut beberapa ekstensi yang perlu diaktifkan:</p>
+
 - php-json ekstension untuk bekerja dengan JSON;
+
 - php-mysqlnd native driver untuk MySQL;
+
 - php-xml ekstension untuk bekerja dengan XML;
+
 - php-intl ekstensi untuk membuat aplikasi multibahasa;
+
 - libcurl (opsional);
 
 <p>Untuk mengaktifkan ekstensi tersebut, pergi ke XAMPP Control Panel pada bagian Apache klik Config
@@ -51,15 +56,18 @@ simpan kembali filenya dan restart Apache web server.</p>
 <p>Untuk melakukan instalasi Codeigniter 4 dapat dilakukan dengan dua cara, yaitu cara manual dan
 menggunakan composer. Yang pertama kita akan menggunakan cara manual.</p>
 
-1. Buka situs web resmi CodeIgniter 4 di https://codeigniter.com dan klik tombol "Download" di menu atas. Pilih versi terbaru dari CodeIgniter 4 yang tersedia untuk diunduh.
+1. Buka situs web resmi CodeIgniter 4 di https://codeigniter.com dan klik tombol "Download" di menu atas. Pilih versi terbaru dari CodeIgniter 4 yang tersedia untuk diunduh.<a href="https://codeigniter.com/download"><img alt="Download CodeIgniter" src="https://img.shields.io/badge/1%2C080%20KB-CodeIgniter-orange" /></a>
+
 2. Setelah selesai mengunduh, ekstrak file yang diunduh ke dalam direktori project kita (Example: htdocs/lab7_php_ci).
+
 3. Ubah nama direktory framework-4.x.xx menjadi ci4.
-3. Di dalam direktori ci4, ubah nama file `env` menjadi `.env` kemudian buka file tersebut dan ubah nilai variable
+
+4. Di dalam direktori ci4, ubah nama file `env` menjadi `.env` kemudian buka file tersebut dan ubah nilai variable
 CI_ENVIRONMENT menjadi development. Dan kita dapat menyesuaikan pengaturan seperti database dan konfigurasi lainnya. Pastikan untuk menyimpan file setelah melakukan perubahan.
 
 ![Konfigurasi CI](README_img/konfigurasi_ci.png)
 
-4. Kemudian, buka browser dengan alamat http://localhost/lab7_php_ci/ci4/public/
+5. Kemudian, buka browser dengan alamat http://localhost/lab7_php_ci/ci4/public/
 
 ![Tampilan Codeigniter 4](README_img/tampilan_codeigniter.png)
 
