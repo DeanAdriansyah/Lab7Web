@@ -271,17 +271,15 @@ Selanjutnya refresh tampilan pada alamat http://localhost:8080/about
 
 ![menambahkan_gambar](README_img/___.png)
 
-Pertanyaan dan Tugas
-
-Lengkapi kode program untuk menu lainnya yang ada pada Controller Page, sehingga semua link pada
-navigasi header dapat menampilkan tampilan dengan layout yang sama.
-
 
 
 ---
 # <p align="center">Tugas</p>
 
+Pertanyaan dan Tugas
 
+Lengkapi kode program untuk menu lainnya yang ada pada Controller Page, sehingga semua link pada
+navigasi header dapat menampilkan tampilan dengan layout yang sama.
 
 
 
