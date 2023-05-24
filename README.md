@@ -8,6 +8,8 @@
 **Teknik Informatika - UNIVERSITAS PELITA BANGSA**
 
 ---
+![gambar](README_img/Codeigniter.png)
+
 # <p align="center">Praktikum 7: PHP Framework (Codeigniter)</p>
 
 ### Tujuan
