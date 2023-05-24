@@ -401,7 +401,15 @@ Pertanyaan dan Tugas
 Lengkapi kode program untuk menu lainnya yang ada pada Controller Page, sehingga semua link pada
 navigasi header dapat menampilkan tampilan dengan layout yang sama.
 
+- Halaman Artikel
 
+![tugas](README_img/artikel_page.png)
 
+- Halaman About
 
+![tugas](README_img/about_page.png)
+
+- Halaman Contact
+
+![tugas](README_img/contact_page.png)
 
