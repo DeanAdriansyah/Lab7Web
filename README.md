@@ -39,12 +39,12 @@ Berikut beberapa ekstensi yang perlu diaktifkan:</p>
 <p>Untuk mengaktifkan ekstensi tersebut, pergi ke XAMPP Control Panel pada bagian Apache klik Config
 -> PHP.ini</p>
 
-![Konfigurasi PHP](img/konfigurasi_php.png)
+![Konfigurasi PHP](README_img/konfigurasi_php.png)
 
 <p>Pada bagian extention, hilangkan tanda ; (titik koma) pada ekstensi yang akan diaktifkan. Kemudian
 simpan kembali filenya dan restart Apache web server.</p>
 
-![Ekstensi PHP](img/ekstensi_php.png)
+![Ekstensi PHP](README_img/ekstensi_php.png)
 
 # Instalasi Codeigniter 4 (CI)
 ## Manual
@@ -57,11 +57,11 @@ menggunakan composer. Yang pertama kita akan menggunakan cara manual.</p>
 3. Di dalam direktori ci4, ubah nama file `env` menjadi `.env` kemudian buka file tersebut dan ubah nilai variable
 CI_ENVIRONMENT menjadi development. Dan kita dapat menyesuaikan pengaturan seperti database dan konfigurasi lainnya. Pastikan untuk menyimpan file setelah melakukan perubahan.
 
-![Konfigurasi CI](img/konfigurasi_ci.png)
+![Konfigurasi CI](README_img/konfigurasi_ci.png)
 
 4. Kemudian, buka browser dengan alamat http://localhost/lab7_php_ci/ci4/public/
 
-![Tampilan Codeigniter 4](img/tampilan_codeigniter.png)
+![Tampilan Codeigniter 4](README_img/tampilan_codeigniter.png)
 
 ## Composer
 <p>Untuk melakukan instalasi menggunakan composer pastikan bahwa composer sudah terinstal di komputer kita. Jika belum, unduh composer dari situs web resmi di https://getcomposer.org/ dan ikuti petunjuk instalasi.</p>
@@ -78,7 +78,7 @@ composer create-project codeigniter4/appstarter lab7_php_ci
 php spark serve
 ```
 
-![PHP Spark Serve](img/php_spark_serve.png)
+![PHP Spark Serve](README_img/php_spark_serve.png)
 
 6. Buka Web browser dan buka alamat localhost:8080. Jika semuanya berjalan dengan lancar, Maka tampilannya akan sama dengan gambar sebelumnya.
 
@@ -86,7 +86,7 @@ php spark serve
 <p>Pada CodeIgniter, routing digunakan untuk menentukan controller mana yang akan menangani request. Controller sendiri adalah sebuah kelas atau script yang bertanggung jawab untuk merespon request tersebut. Dalam CodeIgniter, request yang diterima oleh file index.php akan diteruskan ke Router dan kemudian diarahkan ke Controller yang sesuai.</p>
 <p>Router terletak pada file app/config/Routes.php</p>
 
-![Ruotes PHP](img/routes_php.png)
+![Ruotes PHP](README_img/routes_php.png)
 
 ### Membuat Routes Baru
 - Tambahkan kode berikut ke dalam Routes.php
@@ -97,7 +97,7 @@ $routes->get('/contact', 'Page::contact');
 $routes->get('/faqs', 'Page::faqs');
 ```
 
-![Tambah Routes](img/tambah_routes.png)
+![Tambah Routes](README_img/tambah_routes.png)
 
 - Untuk mengetahui route yang ditambahkan sudah benar, buka CLI dan jalankan perintah berikut.
 
@@ -105,11 +105,11 @@ $routes->get('/faqs', 'Page::faqs');
 php spark routes
 ```
 
-![Tampilan CLI](img/tampilan_cli.png)
+![Tampilan CLI](README_img/tampilan_cli.png)
 
 - Selanjutnya coba akses route yang telah dibuat dengan mengakses alamat http://localhost:8080/about
 
-![Tampilan Error Page](img/tampilan_error_page.png)
+![Tampilan Error Page](README_img/tampilan_error_page.png)
 
 <p>Ketika diakses akan mucul tampilan error 404 file not found, itu artinya file/page tersebut tidak ada.
 Untuk dapat mengakses halaman tersebut, harus dibuat terlebih dahulu Contoller yang sesuai dengan
@@ -142,7 +142,7 @@ class Page extends BaseController
 - Selanjutnya refresh kembali web browser, maka akan ditampilkan hasilnya yaitu halaman sudah dapat
 diakses.
 
-![Tampilan Halaman About](img/tampilan_halaman_page_php.png)
+![Tampilan Halaman About](README_img/tampilan_halaman_page_php.png)
 
 ### Auto Routing
 - Secara default fitur autoroute pada Codeiginiter sudah aktif. Untuk mengubah status autoroute dapat
@@ -163,7 +163,7 @@ public function tos()
 
 - Method ini belum ada pada routing, sehingga cara mengaksesnya dengan menggunakan alamat: http://localhost:8080/page/tos
 
-![Tampilan Autoroute](img/tampilan_autoroute.png)
+![Tampilan Autoroute](README_img/tampilan_autoroute.png)
 
 ### Membuat View
 - Selanjutnya dalam membuat view untuk tampilan web agar lebih menarik. Buat file baru dengan
@@ -193,7 +193,7 @@ public function about()
 
 - Kemudian lakukan refresh pada halaman web tersebut.
 
-![Halaman About](img/halaman_about.png)
+![Halaman About](README_img/halaman_about.png)
 
 # Membuat Layout Web dengan CSS
 <p>Pada dasarnya layout web dengan css dapat diimplamentasikan dengan mudah pada Codeigniter. Yang
@@ -202,7 +202,7 @@ direktori public.</p>
 
 - Buat file CSS pada direktori public dengan nama `style.css`.
 
-![Direktori Asset](img/direktori_asset.png)
+![Direktori Asset](README_img/direktori_asset.png)
 
 - Kemudian buat folder `template` pada direktori view. lalu buat file baru dengan nama `header.php` dan `footer.php`.
 
