@@ -25,252 +25,372 @@
 
 ---
 # <p align="center">Langkah-langkah Praktikum</p>
-### Persiapan
-Sebelum memulai menggunakan Framework Codeigniter, perlu dilakukan konfigurasi pada webserver.
-Beberapa ekstensi PHP perlu diaktifkan untuk kebutuhan pengembangan Codeigniter 4.
 
-Berikut beberapa ekstensi yang perlu diaktifkan:
+# Langkah-langkah & Persiapan
+<p>Sebelum memulai menggunakan Framework Codeigniter, perlu dilakukan konfigurasi pada webserver.
+Beberapa ekstensi PHP perlu diaktifkan untuk kebutuhan pengembangan Codeigniter 4.
+Berikut beberapa ekstensi yang perlu diaktifkan:</p>
 - php-json ekstension untuk bekerja dengan JSON;
 - php-mysqlnd native driver untuk MySQL;
 - php-xml ekstension untuk bekerja dengan XML;
 - php-intl ekstensi untuk membuat aplikasi multibahasa;
-- libcurl (opsional), jika ingin pakai Curl.
+- libcurl (opsional);
 
-Untuk mengaktifkan ekstentsi tersebut, melalu XAMPP Control Panel, pada bagian Apache klik Config
--> PHP.ini
+<p>Untuk mengaktifkan ekstensi tersebut, pergi ke XAMPP Control Panel pada bagian Apache klik Config
+-> PHP.ini</p>
 
-![menambahkan_gambar](README_img/___.png)
+![Konfigurasi PHP](img/konfigurasi_php.png)
 
-Pada bagian extention, hilangkan tanda ; (titik koma) pada ekstensi yang akan diaktifkan. Kemudian
-simpan kembali filenya dan restart Apache web server.
+<p>Pada bagian extention, hilangkan tanda ; (titik koma) pada ekstensi yang akan diaktifkan. Kemudian
+simpan kembali filenya dan restart Apache web server.</p>
 
-![menambahkan_gambar](README_img/___.png)
+![Ekstensi PHP](img/ekstensi_php.png)
 
-Instalasi Codeigniter 4
+# Instalasi Codeigniter 4 (CI)
+## Manual
+<p>Untuk melakukan instalasi Codeigniter 4 dapat dilakukan dengan dua cara, yaitu cara manual dan
+menggunakan composer. Yang pertama kita akan menggunakan cara manual.</p>
 
-Untuk melakukan instalasi Codeigniter 4 dapat dilakukan dengan dua cara, yaitu cara manual dan
-menggunakan composer. Pada praktikum ini kita menggunakan cara manual.
+1. Buka situs web resmi CodeIgniter 4 di https://codeigniter.com dan klik tombol "Download" di menu atas. Pilih versi terbaru dari CodeIgniter 4 yang tersedia untuk diunduh.
+2. Setelah selesai mengunduh, ekstrak file yang diunduh ke dalam direktori project kita (Example: htdocs/lab7_php_ci).
+3. Ubah nama direktory framework-4.x.xx menjadi ci4.
+3. Di dalam direktori ci4, ubah nama file `env` menjadi `.env` kemudian buka file tersebut dan ubah nilai variable
+CI_ENVIRONMENT menjadi development. Dan kita dapat menyesuaikan pengaturan seperti database dan konfigurasi lainnya. Pastikan untuk menyimpan file setelah melakukan perubahan.
 
-• Unduh Codeigniter dari website https://codeigniter.com/download
-• Extrak file zip Codeigniter ke direktori htdocs/lab11_ci.
-• Ubah nama direktory framework-4.x.xx menjadi ci4.
-• Buka browser dengan alamat http://localhost/lab11_ci/ci4/public/
+![Konfigurasi CI](img/konfigurasi_ci.png)
 
-![menambahkan_gambar](README_img/___.png)
+4. Kemudian, buka browser dengan alamat http://localhost/lab7_php_ci/ci4/public/
 
-Menjalankan CLI (Command Line Interface)
+![Tampilan Codeigniter 4](img/tampilan_codeigniter.png)
 
-Codeigniter 4 menyediakan CLI untuk mempermudah proses development. Untuk mengakses CLI buka
-terminal/command prompt.
+## Composer
+<p>Untuk melakukan instalasi menggunakan composer pastikan bahwa composer sudah terinstal di komputer kita. Jika belum, unduh composer dari situs web resmi di https://getcomposer.org/ dan ikuti petunjuk instalasi.</p>
 
-![menambahkan_gambar](README_img/___.png)
+1. Buka terminal atau command prompt pada komputer kita.
+2. Buat direktori baru untuk proyek CodeIgniter kita dan masuk ke dalamnya.
+3. Jalankan perintah Composer untuk menginstal CodeIgniter 4:
+```bash
+composer create-project codeigniter4/appstarter lab7_php_ci
+```
+4. Tunggu sampai proses instalasi selesai. Composer akan mengunduh dan menginstal semua dependensi dan paket yang diperlukan oleh CodeIgniter 4.
+5. Setelah proses instalasi selesai, masuk ke direktori proyek kita dan jalankan server pengembangan dengan perintah berikut:
+```php
+php spark serve
+```
 
-Arahkan lokasi direktori sesuai dengan direktori kerja project dibuat (xampp/htdocs/lab11_ci/ci4/)
-Perintah yang dapat dijalankan untuk memanggil CLI Codeigniter adalah:
+![PHP Spark Serve](img/php_spark_serve.png)
 
-![menambahkan_gambar](README_img/___.png)
+6. Buka Web browser dan buka alamat localhost:8080. Jika semuanya berjalan dengan lancar, Maka tampilannya akan sama dengan gambar sebelumnya.
 
-![menambahkan_gambar](README_img/___.png)
+# Routing & Controller
+<p>Pada CodeIgniter, routing digunakan untuk menentukan controller mana yang akan menangani request. Controller sendiri adalah sebuah kelas atau script yang bertanggung jawab untuk merespon request tersebut. Dalam CodeIgniter, request yang diterima oleh file index.php akan diteruskan ke Router dan kemudian diarahkan ke Controller yang sesuai.</p>
+<p>Router terletak pada file app/config/Routes.php</p>
 
-Mengaktifkan Mode Debugging
+![Ruotes PHP](img/routes_php.png)
 
-Codeigniter 4 menyediakan fitur debugging untuk memudahkan developer untuk mengetahui pesan
-error apabila terjadi kesalahan dalam membuat kode program.
+### Membuat Routes Baru
+- Tambahkan kode berikut ke dalam Routes.php
 
-Secara default fitur ini belum aktif. Ketika terjadi error pada aplikasi akan ditampilkan pesan
-kesalahan seperti berikut.
+```php
+$routes->get('/about', 'Page::about');
+$routes->get('/contact', 'Page::contact');
+$routes->get('/faqs', 'Page::faqs');
+```
 
-![menambahkan_gambar](README_img/___.png)
+![Tambah Routes](img/tambah_routes.png)
 
-Semua jenis error akan ditampilkan sama. Untuk memudahkan mengetahui jenis errornya, maka perlu
-diaktifkan mode debugging dengan mengubah nilai konfigurasi pada environment variable
-CI_ENVIRINMENT menjadi development.
+- Untuk mengetahui route yang ditambahkan sudah benar, buka CLI dan jalankan perintah berikut.
 
-![menambahkan_gambar](README_img/___.png)
+```php
+php spark routes
+```
 
-Ubah nama file env menjadi .env kemudian buka file tersebut dan ubah nilai variable
-CI_ENVIRINMENT menjadi development.
+![Tampilan CLI](img/tampilan_cli.png)
 
-![menambahkan_gambar](README_img/___.png)
+- Selanjutnya coba akses route yang telah dibuat dengan mengakses alamat http://localhost:8080/about
 
-Contoh error yang terjadi. Untuk mencoba error tersebut, ubah kode pada file
-app/Controller/Home.php hilangkan titik koma pada akhir kode.
+![Tampilan Error Page](img/tampilan_error_page.png)
 
-![menambahkan_gambar](README_img/___.png)
-
-Struktur Direktori
-
-Untuk lebih memahami Framework Codeigniter 4 perlu mengetahui struktur direktori dan file yang
-ada. Buka pada Windows Explorer atau dari Visual Studio Code -> Open Folder.
-
-Terdapat beberapa direktori dan file yang perlu dipahami fungsi dan kegunaannya.
-- .github folder ini kita butuhkan untuk konfigurasi repo github, seperti konfigurasi untuk
-build dengan github action;
-- app folder ini akan berisi kode dari aplikasi yang kita kembangkan;
-- public folder ini berisi file yang bisa diakses oleh publik, seperti file index.php, robots.txt,
-favicon.ico, ads.txt, dll;
-- tests folder ini berisi kode untuk melakukan testing dengna PHPunit;
-- vendor folder ini berisi library yang dibutuhkan oleh aplikasi, isinya juga termasuk kode
-core dari system CI.
-- writable folder ini berisi file yang ditulis oleh aplikasi. Nantinya, kita bisa pakai untuk
-menyimpan file yang di-upload, logs, session, dll.
-
-Sedangkan file-file yang berada pada root direktori CI sebagai berikut.
-- .env adalah file yang berisi variabel environment yang dibutuhkan oleh aplikasi.
-- .gitignore adalah file yang berisi daftar nama file dan folder yang akan diabaikan oleh Git.
-- build adalah script untuk mengubah versi codeigniter yang digunakan. Ada versi release
-(stabil) dan development (labil).
-- composer.json adalah file JSON yang berisi informasi tentang proyek dan daftar library
-yang dibutuhkannya. File ini digunakan oleh Composer sebagai acuan.
-- composer.lock adalah file yang berisi informasi versi dari libraray yang digunakan aplikasi.
-- license.txt adalah file yang berisi penjelasan tentang lisensi Codeigniter;
-- phpunit.xml.dist adalah file XML yang berisi konfigurasi untuk PHPunit.
-- README.md adalah file keterangan tentang codebase CI. Ini biasanya akan dibutuhkan
-pada repo github atau gitlab.
-- spark adalah program atau script yang berfungsi untuk menjalankan server, generate kode,
-dll.
-
-![menambahkan_gambar](README_img/___.png)
-
-Fokus kita pada folder app, dimana folder tersebut adalah area kerja kita untuk membuat aplikasi.
-Dan folder public untuk menyimpan aset web seperti css, gambar, javascript, dll.
-
-Memahami Konsep MVC
-
-Codeigniter menggunakan konsep MVC. MVC meripakan singkatan dari Model-View-Controller. MVC
-merupakan konsep arsitektur yang umum digunakan dalam pengembangan aplikasi. Konsep MVC
-adalah memisahkan kode program berdasarkan logic proses, data, dan tampilan. Untuk logic proses
-diletakkan pada direktori Contoller, Objek data diletakkan pada direktori Model, dan desain tampilan
-diletakkan pada direktori View.
-
-Codeigniter menggunakan konsep pemrograman berorientasi objek dalam mengimplementasikan
-konsep MVC.
-
-Model merupakan kode program yang berisi pemodelan data. Data dapat berupa database ataupun
-sumber lainnya.
-
-View merupakan kode program yang berisi bagian yang menangani terkait tampilan user interface
-sebuah aplikasi. didalam aplikasi web biasanya pasti akan berhubungan dengan html dan css.
-Controller merupakaan kode program yang berkaitan dengan logic proses yang menghubungkan
-antara view dan model. Controller berfungsi untuk menerima request dan data dari user kemudian
-diproses dengan menghubungkan bagian model dan view.
-
-Routing dan Controller
-
-Routing merupakan proses yang mengatur arah atau rute dari request untuk menentukan
-fungsi/bagian mana yang akan memproses request tersebut. Pada framework CI4, routing bertujuan
-untuk menentukan Controller mana yang harus merespon sebuah request. Controller adalah class atau
-script yang bertanggung jawab merespon sebuah request.
-
-Pada Codeigniter, request yang diterima oleh file index.php akan diarahkan ke Router untuk meudian
-oleh router tesebut diarahkan ke Controller.
-
-Router terletak pada file app/config/Routes.php
-
-![menambahkan_gambar](README_img/___.png)
-
-Pada file tersebut kita dapat mendefinisikan route untuk aplikasi yang kita buat.
-Contoh:
-
-![menambahkan_gambar](README_img/___.png)
-
-Kode tersebut akan mengarahkan rute untuk halaman home.
-
-Membuat Route Baru.
-
-Tambahkan kode berikut di dalam Routes.php
-
-![menambahkan_gambar](README_img/___.png)
-
-Untuk mengetahui route yang ditambahkan sudah benar, buka CLI dan jalankan perintah berikut.
-
-![menambahkan_gambar](README_img/___.png)
-
-![menambahkan_gambar](README_img/___.png)
-
-Selanjutnya coba akses route yang telah dibuat dengan mengakses alamat url
-http://localhost:8080/about
-
-![menambahkan_gambar](README_img/___.png)
-
-Ketika diakses akan mucul tampilan error 404 file not found, itu artinya file/page tersebut tidak ada.
+<p>Ketika diakses akan mucul tampilan error 404 file not found, itu artinya file/page tersebut tidak ada.
 Untuk dapat mengakses halaman tersebut, harus dibuat terlebih dahulu Contoller yang sesuai dengan
-routing yang dibuat yaitu Contoller Page.
+routing yang dibuat yaitu Contoller Page.</p>
 
-Membuat Controller
-
-Selanjutnya adalah membuat Controller Page. Buat file baru dengan nama page.php pada direktori
+### Membuat Controller Page
+- Selanjutnya adalah membuat Controller Page. Buat file baru dengan nama page.php pada direktori
 Controller kemudian isi kodenya seperti berikut.
 
-![menambahkan_gambar](README_img/___.png)
+```php
+<?php
+namespace App\Controllers;
+class Page extends BaseController
+{
+  public function about()
+  {
+    echo "Ini halaman About";
+  }
+  public function contact()
+  {
+    echo "Ini halaman Contact";
+  }
+  public function faqs()
+  {
+    echo "Ini halaman FAQ";
+  }
+}
+```
 
-Selanjutnya refresh Kembali browser, maka akan ditampilkan hasilnya yaotu halaman sudah dapat
+- Selanjutnya refresh kembali web browser, maka akan ditampilkan hasilnya yaitu halaman sudah dapat
 diakses.
 
-![menambahkan_gambar](README_img/___.png)
+![Tampilan Halaman About](img/tampilan_halaman_page_php.png)
 
-Auto Routing
+### Auto Routing
+- Secara default fitur autoroute pada Codeiginiter sudah aktif. Untuk mengubah status autoroute dapat
+mengubah nilai variabelnya. Untuk menonaktifkan ubah nilai `true` menjadi `false`.
 
-Secara default fitur autoroute pada Codeiginiter sudah aktif. Untuk mengubah status autoroute dapat
-mengubah nilai variabelnya. Untuk menonaktifkan ubah nilai true menjadi false.
+```php
+$routes->setAutoRoute(true);
+```
 
-![menambahkan_gambar](README_img/___.png)
+- Tambahkan method baru pada Controller Page seperti berikut.
 
-Tambahkan method baru pada Controller Page seperti berikut.
+```php
+public function tos()
+{
+  echo "ini halaman Term of Services";
+}
+```
 
-![menambahkan_gambar](README_img/___.png)
+- Method ini belum ada pada routing, sehingga cara mengaksesnya dengan menggunakan alamat: http://localhost:8080/page/tos
 
-Method ini belum ada pada routing, sehingga cara mengaksesnya dengan menggunakan alamat:
-http://localhost:8080/page/tos
+![Tampilan Autoroute](img/tampilan_autoroute.png)
 
-![menambahkan_gambar](README_img/___.png)
-
-Membuat View
-
-Selanjutnya adalam membuat view untuk tampilan web agar lebih menarik. Buat file baru dengan
+### Membuat View
+- Selanjutnya dalam membuat view untuk tampilan web agar lebih menarik. Buat file baru dengan
 nama about.php pada direktori view (app/view/about.php) kemudian isi kodenya seperti berikut.
 
-![menambahkan_gambar](README_img/___.png)
+```php
+<?= $this->include('template/header'); ?>
+  <div class="content">
+    <h1><?= $title; ?></h1>
+    <hr>
+    <p><?= $content; ?></p>
+  </div>
+<?= $this->include('template/footer'); ?>
+```
 
-Ubah method about pada class Controller Page menjadi seperti berikut:
+- Ubah method about pada class Controller Page menjadi seperti berikut:
 
-![menambahkan_gambar](README_img/___.png)
+```php
+public function about()
+{
+  return view('about', [
+    'title' => 'Halaman About',
+    'content' => 'Ini adalah halaman abaut yang menjelaskan tentang isi halaman ini.'
+  ]);
+}
+```
 
-Kemudian lakukan refresh pada halaman tersebut.
+- Kemudian lakukan refresh pada halaman web tersebut.
 
-![menambahkan_gambar](README_img/___.png)
+![Halaman About](img/halaman_about.png)
 
-Membuat Layout Web dengan CSS
+# Membuat Layout Web dengan CSS
+<p>Pada dasarnya layout web dengan css dapat diimplamentasikan dengan mudah pada Codeigniter. Yang
+perlu diketahui pada Codeigniter 4 adalah file yang menyimpan asset css dan javascript terletak pada
+direktori public.</p>
 
-Pada dasarnya layout web dengan css dapat diimplamentasikan dengan mudah pada codeigniter. Yang
-perlu diketahui adalah, pada Codeigniter 4 file yang menyimpan asset css dan javascript terletak pada
-direktori public.
+- Buat file CSS pada direktori public dengan nama `style.css`.
 
-Buat file css pada direktori public dengan nama style.css (copy file dari praktikum lab4_layout. Kita
-akan gunakan layout yang pernah dibuat pada praktikum 4.
+![Direktori Asset](img/direktori_asset.png)
 
-![menambahkan_gambar](README_img/___.png)
+- Kemudian buat folder `template` pada direktori view. lalu buat file baru dengan nama `header.php` dan `footer.php`.
 
-Kemudian buat folder template pada direktori view kemudian buat file header.php dan footer.php
+- Lalu, masukan kode berikut ke dalam file app/view/template/header.php
 
-File app/view/template/header.php
+```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><?= $title; ?></title>
+  <link rel="stylesheet" href="<?= base_url('/style.css'); ?>">
+</head>
+<body>
+  <div id="container">
+    <div class="header">
+      <h1>Layout Sederhana</h1>
+    </div>
+    <nav>
+      <a href="<?= base_url('/'); ?>">Home</a>
+      <a href="<?= base_url('/artikel'); ?>">Artikel</a>
+      <a href="<?= base_url('/about'); ?>">About</a>
+      <a href="<?= base_url('/contact'); ?>">Kontak</a>
+    </nav>
+```
 
-![menambahkan_gambar](README_img/___.png)
+- Dan masukan juga kode berikut ke dalam file app/view/template/footer.php
 
-![menambahkan_gambar](README_img/___.png)
+```php
+<section id="wrapper">
+  <section id="main">
+  </section>
+  <aside id="sidebar">
+    <div class="widget-box">
+      <h3 class="title">Widget Header</h3>
+      <ul>
+        <li><a href="#">Widget Link</a></li>
+        <li><a href="#">Widget Link</a></li>
+      </ul>
+    </div>
+    <div class="widget-box">
+      <h3 class="title">Widget Text</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nemo pariatur vitae obcaecati nam in ipsa, optio nesciunt ducimus eos doloribus minus sequi, quae placeat fuga?
+      </p>
+    </div>
+  </aside>
+</section>
+<footer>
+  <p>&copy; 2023 - Universitas Pelita Bangsa</p>
+</footer>
+</div>
+</body>
+</html>
+```
 
-File app/view/template/footer.php
+- Kemudian, ubah file app/view/about.php seperti berikut.
 
-![menambahkan_gambar](README_img/___.png)
+```php
+<?= $this->include('template/header'); ?>
+  <div class="content">
+    <h1><?= $title; ?></h1>
+    <hr>
+    <p><?= $content; ?></p>
+  </div>
+<?= $this->include('template/footer'); ?>
+```
 
-Kemudian ubah file app/view/about.php seperti berikut.
+- Tambahkan kode CSS untuk mempercantik tampilannya, dengan menambahkan kode berikut ke dalam file `style.css`.
 
-![menambahkan_gambar](README_img/___.png)
+```css
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-Selanjutnya refresh tampilan pada alamat http://localhost:8080/about
+/* Container */
+#container {
+  width: 980px;
+  margin: 0 auto;
+  box-shadow: 0 0 1em #cccccc;
+}
 
-![menambahkan_gambar](README_img/___.png)
+/* Header */
+.header {
+  padding: 20px;
+  color: #b5b5b5;
+}
 
+/* Navigation */
+nav {
+  display: block;
+  background-color: #1f5faa;
+}
+
+nav a {
+  display: inline-block;
+  padding: 20px 30px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a.active,
+nav a:hover {
+  background-color: #2b83ea;
+}
+
+/* Wrapper */
+#wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin: 20px;
+}
+
+/* Main Content */
+#main {
+  flex-basis: 65%;
+  margin-right: 10px;
+}
+
+/* Sidebar */
+#sidebar {
+  float: left;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Widget */
+.widget-box {
+  border: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+.widget-box h3.title {
+  margin: 0;
+  padding: 15px 16px;
+  background-color: #428bca;
+  color: #fff;
+}
+
+.widget-box ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.widget-box li {
+  border-bottom: 1px solid #eee;
+}
+
+.widget-box li a {
+  display: block;
+  padding: 10px 16px;
+  color: #333;
+  text-decoration: none;
+}
+
+.widget-box li:hover a {
+  background-color: #eee;
+}
+
+.widget-box p {
+  padding: 0 15px;
+  line-height: 25px;
+}
+
+/* Footer */
+footer {
+  background-color: rgb(40, 40, 40);
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Content */
+.content {
+  padding: 10px 20px;
+  float: left;
+  width: 65%;
+  flex-basis: 100%;
+}
+```
+
+- Selanjutnya refresh halaman web pada alamat: http://localhost:8080/about
 
 
 ---
